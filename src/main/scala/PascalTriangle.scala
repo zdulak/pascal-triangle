@@ -1,5 +1,5 @@
 object PascalTriangle extends App {
-  val triangle = computePascalTriangle(4)
+  val triangle = computePascalTriangle(16)
   printPascalTriangle(triangle)
 
   def printPascalTriangle(triangle: Seq[Seq[Int]]): Unit = {
@@ -13,8 +13,8 @@ object PascalTriangle extends App {
   def computePascalTriangle(rows: Int): Seq[Seq[Int]] = {
     for (i <- 0 until rows) yield
       for (j <- 0 to i) yield
-        factorial(i) / (factorial(j) * factorial(i - j))
+        (factorial(i) / (factorial(j) * factorial(i - j))).toInt
   }
 
-  def factorial(n: Int): Int = (1 to n).product
+  def factorial(n: Int): BigInt= (BigInt(1) to BigInt(n)).product
 }
