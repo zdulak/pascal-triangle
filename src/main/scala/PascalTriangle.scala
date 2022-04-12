@@ -1,5 +1,5 @@
-object PascalTriangleApp extends App {
-  val triangle = computePascalTriangle(16)
+object PascalTriangle extends App {
+  val triangle = computePascalTriangle(25)
   printPascalTriangle(triangle)
 
   def printPascalTriangle(triangle: Seq[Seq[Int]]): Unit = {
